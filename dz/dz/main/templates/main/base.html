@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
+        <nav class="my-2 my-md-0 me-md-3">
+            <a class="p-2 text-dark" href="{% url 'home' %}">Главная страница</a>
+            <a class="p-2 text-dark" href="{% url 'about' %}">Страница информации</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script>
+        function getResol(){
+            var w = screen.width
+            var h = screen.height
+            var z = w + "x" + h
+            z1 = document.getElementById('1')
+            z1.innerHTML = z
+        }
+        getResol()
+        </script>
+
+        <p align="left"><b> 	Браузер:</b></p>
+        <p align="left" id="2"></p>
+
+        <script>
+            var code = navigator.appCodeName
+            code1 = document.getElementById('2')
+            code1.innerHTML = code
+        </script>
+
+        <p align="left"><b> 	ОС:</b></p>
+        <p align="left" id="3" ></p>
+        <script>
+            var platform = navigator.platform
+            platform1 = document.getElementById('3')
+            platform1.innerHTML = platform
+        </script>
+
+        <p align="left"><b> Язык вашей системы:</b></p>
+        <p align="left" id="4"></p>
+        <script>
+            var UserLang = navigator.language || navigator.userLanguage;
+            UserLang1 = document.getElementById('4')
+            UserLang1.innerHTML = UserLang
+        </script>
+
+        <p align="left"><b> Cookies:</b></p>
+        <p align="left" id="5" ></p>
+        <script>
+            var coock = navigator.cookieEnabled
+            coock1 = document.getElementById('5')
+            coock1.innerHTML = coock
+        </script>
+
+
+        <p align="left"><b> Имя вашей платформы:</b></p>
+        <p align="left" id="6"></p>
+        <script>
+            var name = navigator.appName
+            name1 = document.getElementById('6')
+            name1.innerHTML = name
+        </script>
+
+        <p align="left"><b> Версия браузера:</b></p>
+        <p align="left" id = "7"></p>
+        <script>
+            var version = navigator.appVersion
+            version1 = document.getElementById('7')
+            version1.innerHTML = version
+        </script>
+
+        <p align="left"><b>IP:</b></p>
+        <p align="left" id="8"></p>
+        <script type="text/javascript">
+            var ip = location.host;
+            ip_index = document.getElementById('8')
+            ip_index.innerHTML = ip
+        </script>
+
+</body>
+</html>
